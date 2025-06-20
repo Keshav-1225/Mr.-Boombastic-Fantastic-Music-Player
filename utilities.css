@@ -1,0 +1,62 @@
+:root{
+    --backgroundColor: rgb(18,18,18);
+    --lighterbg: rgb(32, 32, 32);
+}
+.border{
+    border: 2px solid white;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.center-align{
+    align-items: center;
+}
+.center-justify{
+    justify-content: center;
+}
+.left-justify{
+    justify-content: left;
+}
+.space-between{
+    justify-content: space-between;
+}
+
+.hover:hover{
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.bgset{
+    background-color: var(--backgroundColor);
+}
+.lighterbg{
+    background-color: var(--lighterbg);
+}
+
+.round-border{
+    border-radius: 10px;
+}
+
+.margin20{
+    margin-bottom: 20px;
+}
+.button{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 40px;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: small;
+}
+.txtColor{
+    color: rgb(159, 159, 159);
+}
+.relativePosition{
+    position: relative;
+}

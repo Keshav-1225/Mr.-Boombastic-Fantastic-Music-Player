@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="scrollbar.css">
+    <title>Mr.Boombastic Fantastic Music Player</title>
+</head>
+<body>
+    <div class="papa-container">
+<!--------------------- NAVIGATION BAR -------------------------->
+        <nav class="flex space-between">
+            <div class="navbar-left hover">
+                <img src="images/spotify-logo.svg" alt="spotify logo">
+            </div>
+            <div class="navbar-center flex"> 
+                <div class="home-wrap hover"><img src="images/home-button.svg" alt="home button"></div>
+                <div class="searchbar">
+                    <div class="search hover">
+                        <img src="images/search-button.svg" alt="search button">
+                        <input type="text" placeholder="What song do you want to play?" >
+                    </div>
+                    <div>
+                        <img src="images/seperator.svg">
+                        <img src="images/browse.svg" alt="browse" class="hover">
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-right flex center-align">
+                <section class="right-one">
+                    <span class="hover">Premium</span>
+                    <span class="hover">Support</span>
+                    <span class="hover">Download</span>
+                </section>
+                <img src="images/seperator.svg">
+                <section class="right-two">
+                    <span class="installApp">
+                        <img src="images/download-icon.svg" alt="Download">
+                        <p class="hover">
+                            Install app
+                        </p>
+                    </span>
+                        <button class="hover signup">Sign up</button>
+                    <button class="login">Log in</button>
+                </section>
+            </div>
+        </nav>
+        <main class="flex">
+            <aside class="sidebar bgset round-border relativePosition">
+                <!---------------------- SIDEBAR -------------------------------------->
+                <div>
+                    <div class="library-text flex">
+                        <span>Your Library</span>
+                        <span><img src="images/add.svg" alt=""></span>
+                    </div>
+                    <div>
+                        <div class="create-your-first-playlist lighterbg sidebar-box">
+                            <div class="margin20">Create your first playlist</div>
+                            <div class="margin20">It's easy, we'll help you</div>
+                            <span class="margin20 button">Create playlist</span>
+                        </div>
+                        <div class="podcasts-to-follow lighterbg sidebar-box">
+                            <div class="margin20">Lets find some podcasts to follow</div>
+                            <div class="margin20">We'll keep you updated on new episodes</div>
+                            <span class="margin20 button">Browse podcasts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist-display">
+                    <ul>
+                        <li><h2><u>Songs</u></h2></li>
+                    </ul>
+                </div>
+                <footer class="bigfooter">
+                    <div class="footer autoOverflow">
+                        <span>Legal</span>
+                        <span>Safety&Privacy Center</span>
+                        <span>Privacy Policy</span>
+                        <span>Cookies</span>
+                        <span>About Ads</span>
+                        <span>Accessibility</span>
+                    </div>
+                    <div class="cookies">
+                        <p>Cookies</p>
+                    </div>
+                    <div class="lang-btn">
+                        <img src="images/globe icon.svg" alt="change language">
+                        <span>English</span>
+                    </div>
+                </footer>
+            </aside>
+            <!------------------------------------- Main Window --------------------------------------->
+            <div class="mainwindow bgset round-border relativePosition">
+                <div class="trending">
+                    <h2>Trending songs</h2>
+                    <div class="cards-container flex">
+                        <div class="card">
+                            <div class="cardImage"><img src="https://i.scdn.co/image/ab67616d00001e026fbb60d6a7e03ccb940a518e" alt="Sapphire"></div>
+                            <div class="playButton"><img src="images/play-button.svg" alt=""></div>
+                            <div class="cardTitle"><h4>Sapphire</h4></div>
+                            <div class="cardArtist txtColor">Ed Sheeran</div>
+                        </div>
+                        <div class="card">
+                            <div class="cardImage"><img src="https://i.scdn.co/image/ab67616d00001e026fbb60d6a7e03ccb940a518e" alt="Sapphire"></div>
+                            <div class="playButton"><img src="images/play-button.svg" alt=""></div>
+                            <div class="cardTitle"><h4>Sapphire</h4></div>
+                            <div class="cardArtist txtColor">Ed Sheeran</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="playbar">
+                    <div class="seekbar">
+                        <span class="dot"></span>
+                    </div>
+                    <div class="music-player">
+                        <div class="songinfo flex center-align left-justify"></div>
+                        <div id="prviousTrack" class="playerButton flex center-align center-justify"><img src="images/previous-button.svg" alt="Previous button"></div>
+                        <div id="CurrentTrack" class="playerButton playpause flex center-align center-justify"><img src="images/play-button.svg" alt="Play/Pause button"></div>
+                        <div id="NextTrack" class="playerButton flex center-align center-justify"><img src="images/next-button.svg" alt="Next track"></div>
+                        <div class="timer flex center-align center-justify"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

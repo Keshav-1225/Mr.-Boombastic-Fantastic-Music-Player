@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --backgroundColor: rgb(33,33,33);
+    --fontColorDim: rgb(178,178,178);
+    
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.home-wrap{
+    background-color: var(--backgroundColor);
+    width: 40px;
+    height: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+.login:hover{
+    cursor: pointer;
+    padding: 11px;
+    padding-left: 21px;
+    padding-right: 21px;
+    background-color: aliceblue;
+}
+.signup{
+    background-color: var(--backgroundColor);
+    border-style: none;
+    color: var(--fontColorDim);
+    font-size: 15px;
+    font-weight: 600;
+}
+.navbar-left{
+    margin-left: 20px;
+    margin-top: -20px;
+}
+.searchbar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    height: 40px;
+    width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    background-color: var(--backgroundColor);
+    border-radius: 50px;
+    input{
+        background-color: rgba(0, 0, 0, 0);
+        /* padding-bottom: 20px; */
+        width: 350px;
+        font-size: 20px; 
+        border: none;   
+    }
+}
+.navbar-center{
+    margin-left: 20vw;
+}
+.navbar-right{
+    color: var(--fontColorDim);
+    font-weight: 700;
+    display: flex;
+    gap: 20px;
+    margin-top: -30px;
+    width: 30vw;
+}
+.installApp{
+    display: flex;
+    align-items: center ;
+}
+.right-two{
+    display: flex;
+    gap:20px;
+    align-items: center;
+    font-size: 15px;
+}
+.sidebar{
+    width: 22vw;
+    height: 92vh;
+    margin-right: 10px;
+}
+.sidebar:first-child{
+    font-weight: 700;
+}
+.mainwindow{
+    width: 76vw;
+}
+.library-text{
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+}
+.sidebar-box{
+    margin: 20px;
+    padding: 20px;
+}
+.lang-btn{
+    border: 0.5px solid rgb(141, 132, 132);
+    border-radius: 30px;
+    display: inline-flex;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    gap: 10px;
+}
+.playlist-display li{
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid var(--fontColorDim);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+.playlist-display ul :first-child{
+    border: 0px;
+}
+.playlist-display{
+    height: 40%;
+    overflow-y: scroll;
+}
+.bigfooter{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: smaller;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .footer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: var(--fontColorDim);
+    }
+}
+.card{
+    width: 200px;
+    height: 300px;
+    position: relative;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.cardImage img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 5px;
+}
+.card:hover{
+    background-color: rgb(31, 31, 31);
+    cursor: pointer;
+    .playButton{
+        visibility: visible;
+    }
+}
+.playButton{
+    position: absolute;
+    right: 10px;
+    top: 140px;
+    /* box-shadow: 10px 10px 10px 10px black; */
+    visibility: hidden;
+}
+.cards-container{
+    gap: 10px;
+    margin-top: 20px;
+}
+.playbar{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+}
+.seekbar{
+    width: 90%;
+    height: 2px;
+    border: 1px solid green;
+    color: white;
+    background-color: black;
+    position: relative;
+    margin: auto;
+}
+.dot{
+    width: 10px;
+    height: 10px;
+    color: #1DB954;
+    background-color: #1DB954;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    bottom: -4px;
+    left:0px;
+    transition: left 0.2s;
+    
+}
+.music-player{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    height: 60px;
+}
+.playerButton{
+    cursor: pointer;
+    width: 5%;
+}
+.songinfo{
+    width: 43%;
+}
+.timer{
+    width: 42%;
+}
