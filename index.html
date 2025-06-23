@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utilities.css">
     <link rel="stylesheet" href="scrollbar.css">
+    <link rel="stylesheet" href="responsive.css">
     <title>Mr.Boombastic Fantastic Music Player</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
                 <img src="images/spotify-logo.svg" alt="spotify logo">
             </div>
             <div class="navbar-center flex"> 
-                <div class="home-wrap hover"><img src="images/home-button.svg" alt="home button"></div>
+                <div class="home-wrap hover hide"><img src="images/home-button.svg" alt="home button"></div>
                 <div class="searchbar">
                     <div class="search hover">
                         <img src="images/search-button.svg" alt="search button">
@@ -29,21 +30,21 @@
                 </div>
             </div>
             <div class="navbar-right flex center-align">
-                <section class="right-one">
+                <section class="right-one hide">
                     <span class="hover">Premium</span>
                     <span class="hover">Support</span>
                     <span class="hover">Download</span>
                 </section>
-                <img src="images/seperator.svg">
+                <img src="images/seperator.svg" class="hide">
                 <section class="right-two">
                     <span class="installApp">
                         <img src="images/download-icon.svg" alt="Download">
-                        <p class="hover">
+                        <p class="hover hide">
                             Install app
                         </p>
                     </span>
                         <button class="hover signup">Sign up</button>
-                    <button class="login">Log in</button>
+                    <button class="login">Log&nbsp;in</button>
                 </section>
             </div>
         </nav>
@@ -53,7 +54,7 @@
                 <div>
                     <div class="library-text flex">
                         <span>Your Library</span>
-                        <span><img src="images/add.svg" alt=""></span>
+                        <span><img src="images/cross-icon.svg" alt="close" class="cross-icon hover"></span>
                     </div>
                     <div>
                         <div class="create-your-first-playlist lighterbg sidebar-box">
@@ -74,7 +75,7 @@
                     </ul>
                 </div>
                 <footer class="bigfooter">
-                    <div class="footer autoOverflow">
+                    <div class="footer">
                         <span>Legal</span>
                         <span>Safety&Privacy Center</span>
                         <span>Privacy Policy</span>
@@ -93,6 +94,9 @@
             </aside>
             <!------------------------------------- Main Window --------------------------------------->
             <div class="mainwindow bgset round-border relativePosition">
+                <div class="hamburger">
+                    <img src="images/ham.svg" alt="open sidebar">
+                </div>
                 <div class="trending">
                     <h2>Trending songs</h2>
                     <div class="cards-container flex">
@@ -111,7 +115,8 @@
                     </div>
                 </div>
                 <div class="playbar">
-                    <div class="seekbar">
+                    <div class="seekbar hover">
+                        <div class="seekbar-fill"></div>
                         <span class="dot"></span>
                     </div>
                     <div class="music-player">

@@ -1,0 +1,66 @@
+@media (max-width: 1770px) {
+    .navbar-right{
+        width: 30vw;
+        flex-wrap: nowrap;
+    }
+}
+@media (max-width:1280px) {
+    .bigfooter{
+        width: 100vw;
+        margin-top: 20px;
+    }
+    .navbar-center{
+        margin-left: 0px;
+    }
+}
+@media (max-width:1024px){
+    .sidebar{
+        width: 30vw;
+    }
+    .mainwindow{
+        width: 69vw;
+    }
+    .card{
+        width:  150px;
+        height: 250px;
+    }
+}
+@media (max-width:412px){
+    
+    /* .mainwindow{
+        width: 100%;
+        height: 100%;
+    } */
+    .hide{
+        visibility: hidden;
+    }
+    nav{
+        display: flex;
+        position: relative;
+        flex-wrap: nowrap;
+    }
+    .searchbar{
+        width: 90%;
+    }
+    .searchbar input{
+        width: 80%;
+    }
+
+    .navbar-right{
+        position: absolute;
+        top: 10px;
+    }
+    .sidebar{
+        position: absolute;
+        z-index: 1;
+        right: 100%;
+    }
+    .playbar{
+        position: relative;
+        bottom: -85%;
+        width: 95vw;
+    }
+    .music-player{
+        gap:30px
+    }
+}

@@ -23,3 +23,7 @@
   scrollbar-width: thin;
   scrollbar-color: #FFFFFF #000000;
 }
+.cross-icon:hover {
+  color: #FFFFFF; /* On hover, becomes white */
+  filter: drop-shadow(0 0 10px #FFFFFF); /* Glow effect */
+}
