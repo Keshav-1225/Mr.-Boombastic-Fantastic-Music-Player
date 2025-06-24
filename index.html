@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utilities.css">
     <link rel="stylesheet" href="scrollbar.css">
@@ -17,7 +18,9 @@
                 <img src="images/spotify-logo.svg" alt="spotify logo">
             </div>
             <div class="navbar-center flex"> 
+                <!-- Home button (hidden on mobile) -->
                 <div class="home-wrap hover hide"><img src="images/home-button.svg" alt="home button"></div>
+                <!-- Search bar -->
                 <div class="searchbar">
                     <div class="search hover">
                         <img src="images/search-button.svg" alt="search button">
@@ -30,6 +33,7 @@
                 </div>
             </div>
             <div class="navbar-right flex center-align">
+                <!-- Premium, Support, Download (hidden on mobile) -->
                 <section class="right-one hide">
                     <span class="hover">Premium</span>
                     <span class="hover">Support</span>
@@ -49,14 +53,16 @@
             </div>
         </nav>
         <main class="flex">
+            <!-- ========== SIDEBAR ========== -->
             <aside class="sidebar bgset round-border relativePosition">
-                <!---------------------- SIDEBAR -------------------------------------->
                 <div>
                     <div class="library-text flex">
                         <span>Your Library</span>
+                        <!-- Cross icon to close sidebar -->
                         <span><img src="images/cross-icon.svg" alt="close" class="cross-icon hover"></span>
                     </div>
                     <div>
+                        <!-- Playlist and Podcast suggestions -->
                         <div class="create-your-first-playlist lighterbg sidebar-box">
                             <div class="margin20">Create your first playlist</div>
                             <div class="margin20">It's easy, we'll help you</div>
@@ -69,11 +75,13 @@
                         </div>
                     </div>
                 </div>
+                <!-- Song list -->
                 <div class="playlist-display">
                     <ul>
                         <li><h2><u>Songs</u></h2></li>
                     </ul>
                 </div>
+                <!-- Sidebar footer -->
                 <footer class="bigfooter">
                     <div class="footer">
                         <span>Legal</span>
@@ -92,11 +100,12 @@
                     </div>
                 </footer>
             </aside>
-            <!------------------------------------- Main Window --------------------------------------->
+            <!-- ========== MAIN WINDOW ========== -->
             <div class="mainwindow bgset round-border relativePosition">
                 <div class="hamburger">
                     <img src="images/ham.svg" alt="open sidebar">
                 </div>
+                <!-- Trending songs section -->
                 <div class="trending">
                     <h2>Trending songs</h2>
                     <div class="cards-container flex">
@@ -114,6 +123,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Playbar at the bottom -->
                 <div class="playbar">
                     <div class="seekbar hover">
                         <div class="seekbar-fill"></div>
