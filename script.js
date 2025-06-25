@@ -10,11 +10,11 @@ async function getSongs() {
     // Parse the HTML to extract song links
     let div = document.createElement("div");
     div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
+    let a_list = div.getElementsByTagName("a");
 
     songs = []
-    for (i = 0; i < as.length; i++) {
-        const element = as[i];
+    for (i = 0; i < a_list.length; i++) {
+        const element = a_list[i];
         if (element.href.endsWith(".mp3")) {
             songs.push(element.href.split("/songs/"))
         }
@@ -58,11 +58,11 @@ function updateTimer(currentTime, duration) {
 
 // ========== Main App Logic ==========
 async function main() {
-    let play = document.querySelector(".playpause");
-    let songs = await getSongs()
-    let display = displaySongs(songs);
-    let selectedsong = Array.from(document.querySelectorAll(".song"));
-    let displaySongName = document.querySelector(".songinfo");
+    let play = document.querySelector(".playpause");    //Working Play/Pause button
+    let songs = await getSongs();   //Array of Songs
+    let display = displaySongs(songs);    //display songs on sidebar
+    let selectedsong = Array.from(document.querySelectorAll(".song"));    //Create an arrray of song names so that forEach can be used.
+    let displaySongName = document.querySelector(".songinfo");    //Display song name on the left side of the playbar.
 
     // Add click event to each song in the sidebar
     selectedsong.forEach(element => {
@@ -75,8 +75,15 @@ async function main() {
     // Play/Pause button logic
     play.addEventListener("click", () => {
         if (currentSong.paused) {
-            currentSong.play()
             play.innerHTML = `<img src="images/pause.svg" alt="Play/Pause button">`
+            if(!currentSong.src)
+            {
+                displaySongName.textContent = (selectedsong[0].textContent.replaceAll("%C2%A3%C3%BC", " "));
+                PlaySong(songs[0][1],false)
+            }else{
+                console.log("Statement false");
+            }
+            currentSong.play()
         } else {
             currentSong.pause()
             play.innerHTML = `<img src="images/play-button.svg" alt="Play/Pause button">`
