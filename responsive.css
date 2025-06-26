@@ -15,14 +15,23 @@
 }
 @media (max-width:1024px){
     .sidebar{
-        width: 30vw;
+        position: absolute;
+        z-index: 1;
+
+        width: 40vw;
     }
     .mainwindow{
-        width: 69vw;
+        width: 100vw;
     }
     .card{
         width:  150px;
         height: 250px;
+    }
+    .cross-icon{
+        visibility:visible;
+    }
+    .hamburger{
+        visibility: visible;
     }
 }
 @media (max-width:412px){
@@ -53,7 +62,12 @@
     .sidebar{
         position: absolute;
         z-index: 1;
-        right: 100%;
+        left: 0vw;
+        top: 10vh;
+        width: 80vw;
+    }
+    .hideSidebar{
+        left: -100vw;
     }
     .playbar{
         position: relative;

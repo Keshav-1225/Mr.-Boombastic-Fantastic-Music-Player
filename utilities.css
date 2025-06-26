@@ -62,5 +62,8 @@
 }
 
 .width100{
-    width: 100vw;
+    width: 100%
+}
+.space-around{
+    justify-content: space-around;
 }

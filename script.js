@@ -113,9 +113,22 @@ async function main() {
     })
 
     // Sidebar close (cross icon)
-    document.querySelector(".cross-icon").addEventListener("click",e=>{
-        document.querySelector(".sidebar").classList.add("hideSidebar")
-        // document.querySelector(".mainwindow").classList.add("width100")
-    })
+        let crossIcon = Array.from(document.querySelectorAll('.cross-icon'));
+        crossIcon.forEach(e=>{
+            console.log(e);
+            e.addEventListener("click",()=>{
+                document.querySelector(".sidebar").classList.add("hideSidebar");
+                document.querySelector(".mainwindow").classList.add("mainwindow_expand");
+            })
+        })
+    // document.querySelector(".cross-icon").addEventListener("click",e=>{
+    //     document.querySelector(".sidebar").classList.add("hideSidebar")
+    //     document.querySelector(".mainwindow").classList.add("mainwindow_expand")
+    // })
+    //Sidebar open(hamburger icon)
+    document.querySelector('.hamburger').addEventListener("click",e=>{
+        document.querySelector(".sidebar").classList.remove("hideSidebar")
+        document.querySelector(".mainwindow").classList.remove("mainwindow_expand")
+    });
 }
 main()
