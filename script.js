@@ -76,12 +76,9 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             play.innerHTML = `<img src="images/pause.svg" alt="Play/Pause button">`
-            if(!currentSong.src)
-            {
+            if (!currentSong.src) {
                 displaySongName.textContent = (selectedsong[0].textContent.replaceAll("%C2%A3%C3%BC", " "));
-                PlaySong(songs[0][1],false)
-            }else{
-                console.log("Statement false");
+                PlaySong(songs[0][1], false)
             }
             currentSong.play()
         } else {
@@ -109,26 +106,69 @@ async function main() {
         let seekbarClick = (offsetX / rect.width) * 100;
         document.querySelector(".dot").style.left = `${seekbarClick}%`;
         document.querySelector(".seekbar-fill").style.width = `${seekbarClick}%`;
-        currentSong.currentTime = (currentSong.duration)*seekbarClick/100;
+        currentSong.currentTime = (currentSong.duration) * seekbarClick / 100;
     })
 
     // Sidebar close (cross icon)
-        let crossIcon = Array.from(document.querySelectorAll('.cross-icon'));
-        crossIcon.forEach(e=>{
-            console.log(e);
-            e.addEventListener("click",()=>{
-                document.querySelector(".sidebar").classList.add("hideSidebar");
-                document.querySelector(".mainwindow").classList.add("mainwindow_expand");
-            })
+    let crossIcon = Array.from(document.querySelectorAll('.cross-icon'));
+    crossIcon.forEach(e => {
+        e.addEventListener("click", () => {
+            document.querySelector(".sidebar").classList.add("hideSidebar");
+            document.querySelector(".mainwindow").classList.add("mainwindow_expand");
         })
-    // document.querySelector(".cross-icon").addEventListener("click",e=>{
-    //     document.querySelector(".sidebar").classList.add("hideSidebar")
-    //     document.querySelector(".mainwindow").classList.add("mainwindow_expand")
-    // })
+    })
     //Sidebar open(hamburger icon)
-    document.querySelector('.hamburger').addEventListener("click",e=>{
+    document.querySelector('.hamburger').addEventListener("click", e => {
         document.querySelector(".sidebar").classList.remove("hideSidebar")
         document.querySelector(".mainwindow").classList.remove("mainwindow_expand")
     });
+    //=========PREVIOUS AND NEXT BUTTON=========================
+    //Previous Button
+    document.querySelector("#prviousTrack").addEventListener("click", () => {
+        try{
+            arrayOfSongs = []
+            for (const i of songs) {
+                arrayOfSongs.push(i.join("/songs/"));
+            }
+            if (arrayOfSongs.includes(currentSong.src)) {
+                let index = arrayOfSongs.indexOf(currentSong.src);
+                // Log the name of the previous song
+                // console.log(songs[index-1][1].replaceAll("%20", " "));
+                PlaySong(songs[index-1][1],false)
+                displaySongName.textContent = songs[index-1][1].replaceAll("%20"," ").replaceAll("%C2%A3%C3%BC", "|");
+                
+            } else {
+                // Log the name of the first song
+                console.log(songs[0][1].replaceAll("%20", " "));
+                PlaySong(songs[0][1],false)
+            }
+        }catch(error){
+            // Log the name of the first song in case of error
+           // console.log(songs[0][1].replaceAll("%20", " "));
+            PlaySong(songs[0][1],false);
+            displaySongName.textContent = songs[0][1].replaceAll("%20"," ").replaceAll("%C2%A3%C3%BC", "|");
+        }
+    })
+    //Next Button
+    document.querySelector("#NextTrack").addEventListener("click", () => {
+        try{
+
+            arrayOfSongs = []
+            for (const i of songs) {
+                arrayOfSongs.push(i.join("/songs/"));
+            }
+            if (arrayOfSongs.includes(currentSong.src)) {
+                let index = arrayOfSongs.indexOf(currentSong.src);
+                PlaySong(songs[index+1][1],false)
+                displaySongName.textContent = songs[index+1][1].replaceAll("%20"," ").replaceAll("%C2%A3%C3%BC", "|");
+            } else {
+                PlaySong(songs[1][1],false)
+                displaySongName.textContent = songs[1][1].replaceAll("%20"," ").replaceAll("%C2%A3%C3%BC", "|");
+            }
+        }catch(error){
+            PlaySong(songs[0][1])
+            displaySongName.textContent = songs[0][1].replaceAll("%20"," ").replaceAll("%C2%A3%C3%BC", "|");
+        }
+    })
 }
 main()
