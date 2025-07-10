@@ -96,6 +96,10 @@ async function main() {
         }
         document.querySelector(".dot").style.left = `${percent}%`;
         document.querySelector(".seekbar-fill").style.width = `${percent}%`;
+        if(Math.ceil(currentSong.currentTime) == Math.ceil(currentSong.duration))
+        {
+            nextSong();
+        }
     })
 
     // Seekbar click: jump to position in song
@@ -150,7 +154,8 @@ async function main() {
         }
     })
     //Next Button
-    document.querySelector("#NextTrack").addEventListener("click", () => {
+    document.querySelector("#NextTrack").addEventListener("click", nextSong)
+    function nextSong(){
         try{
 
             arrayOfSongs = []
@@ -169,6 +174,7 @@ async function main() {
             PlaySong(songs[0][1])
             displaySongName.textContent = songs[0][1].replaceAll("%20"," ").replaceAll("%C2%A3%C3%BC", "|");
         }
-    })
+    }
+
 }
 main()
