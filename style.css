@@ -269,3 +269,11 @@ nav{
 .timer{
     width: 42%;
 }
+.volume{
+    margin-top: 10px;
+    margin-right: 40px;
+    display: flex;
+}
+.volumeRange{
+    color: black;
+}
