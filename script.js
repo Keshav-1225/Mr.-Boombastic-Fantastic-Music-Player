@@ -175,6 +175,10 @@ async function main() {
             displaySongName.textContent = songs[0][1].replaceAll("%20"," ").replaceAll("%C2%A3%C3%BC", "|");
         }
     }
-
+    //Volume Functionality
+    document.querySelector(".volumeRange").addEventListener("change",(e) => {
+        currentSong.volume = parseInt(e.target.value)/100;
+        // console.log(currentSong.volume,"\n",e);
+    })
 }
 main()
