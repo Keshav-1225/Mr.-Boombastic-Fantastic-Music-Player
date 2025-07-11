@@ -1,3 +1,4 @@
+let previousVolume = 0.5;
 // ========== Audio Player Setup ==========
 let currentSong = new Audio();  // Used to play the current track and prevent overlapping songs
 
@@ -178,7 +179,22 @@ async function main() {
     //Volume Functionality
     document.querySelector(".volumeRange").addEventListener("change",(e) => {
         currentSong.volume = parseInt(e.target.value)/100;
+        previousVolume = currentSong.volume
         // console.log(currentSong.volume,"\n",e);
+    })
+    //Mute
+    document.querySelector(".volumeImg").addEventListener("click",()=>{
+        
+        console.log(previousVolume);
+        if (currentSong.volume){
+            currentSong.volume = 0;
+            document.querySelector(".volumeImg").src = "images/mute.svg"
+            console.log("if");
+        }else{
+            currentSong.volume = previousVolume;
+            document.querySelector(".volumeImg").src = "images/volume.svg"
+            console.log("else");
+        }
     })
 }
 main()
